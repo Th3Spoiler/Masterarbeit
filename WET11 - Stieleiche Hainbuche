@@ -1,0 +1,74 @@
+This XML file does not appear to have any style information associated with it. The document tree is shown below.
+<TeChain name="11 SEi - HBu">
+<TePhase name="11 Stieleiche">
+<TePhaseCondition class="de.nwfva.silviculture.base.PcStandTmpInteger">
+<TreatmentElementParameter name="switch" label="Schalter" class="java.lang.Boolean" value="false"/>
+<TreatmentElementParameter name="standTmpInteger" label="Indicator Nummer" class="java.lang.Integer" value="11"/>
+</TePhaseCondition>
+<TeHeightInterval name="Immer" startHeight="0.0" endHeight="200.0">
+<TreatmentElement name="Umbau" label="Umbau " class="de.nwfva.silviculture.base.TeConvertToWet"> </TreatmentElement>
+<TreatmentElement name="Plant" label="Pflanzen " class="de.nwfva.silviculture.base.TePlant">
+<TreatmentElementParameter name="schlussgrad" label="Kronenschlussgrad" class="java.lang.Double" value="0.2"/>
+<TreatmentElementParameter name="material" label="Baumarten und Dichte" class="java.lang.String" value="110=0.9=32.4;"/>
+<TreatmentElementParameter name="verbandx" label="Pflanzverband" class="java.lang.Double" value="2.0"/>
+<TreatmentElementParameter name="verbandy" label="Pflanzverband" class="java.lang.Double" value="3.0"/>
+</TreatmentElement>
+</TeHeightInterval>
+<TeHeightInterval name="Unterbau" startHeight="15.0" endHeight="200.0">
+<TreatmentElement name="PlantUC" label="Unterbauen" class="de.nwfva.silviculture.base.TePlantUnCanopy">
+<TreatmentElementParameter name="schlussgrad" label="Min. Deckungsgrad" class="java.lang.Double" value="0.15"/>
+<TreatmentElementParameter name="material" label="Baumarten und Dichte" class="java.lang.String" value="221=0.2=26.0;"/>
+<TreatmentElementParameter name="verbandx" label="Pflanzverband" class="java.lang.Double" value="2.3"/>
+<TreatmentElementParameter name="verbandy" label="Pflanzverband" class="java.lang.Double" value="3.3"/>
+</TreatmentElement>
+</TeHeightInterval>
+<TeHeightInterval name="Z-Baumauswahl" startHeight="12.0" endHeight="200.0">
+<TreatmentElement name="crop tree selection" label="Z-Baum Auswahl" class="de.nwfva.silviculture.base.TeSelectCropTrees">
+<TreatmentElementParameter name="code1" label="1. Baumart" class="java.lang.Integer" value="110"/>
+<TreatmentElementParameter name="nha1" label="Anzahl der Z-Bäume" class="java.lang.String" value="254-4.666*t.si"/>
+<TreatmentElementParameter name="mixpercent1" label="Mischungsanteil" class="java.lang.Double" value="100.0"/>
+<TreatmentElementParameter name="code2" label="2. Baumart" class="java.lang.Integer" value="0"/>
+<TreatmentElementParameter name="nha2" label="Anzahl der Z-Bäume" class="java.lang.String" value="0"/>
+<TreatmentElementParameter name="mixpercent2" label="Mischungsanteil" class="java.lang.Double" value="0.0"/>
+<TreatmentElementParameter name="code3" label="3. Baumart" class="java.lang.Integer" value="0"/>
+<TreatmentElementParameter name="nha3" label="Anzahl der Z-Bäume" class="java.lang.String" value="0"/>
+<TreatmentElementParameter name="mixpercent3" label="Mischungsanteil" class="java.lang.Double" value="0.0"/>
+<TreatmentElementParameter name="useQuality" label="Qualität berücksichtigen" class="java.lang.Boolean" value="true"/>
+</TreatmentElement>
+</TeHeightInterval>
+<TeHeightInterval name="Ernte" startHeight="10.0" endHeight="200.0">
+<TreatmentElement name="Schirmschlag" label="Schirmschlag" class="de.nwfva.silviculture.base.TeHarvestByShelter">
+<TreatmentElementParameter name="zeit" label="Zeitrahmen" class="java.lang.Integer" value="10"/>
+<TreatmentElementParameter name="criterium" label="Bedingung" class="java.lang.String" value="1 D_CT30% > [cm]"/>
+<TreatmentElementParameter name="wert" label="Wert" class="java.lang.Double" value="70.0"/>
+<TreatmentElementParameter name="phaseNo" label="Nach Abschluss der Holzernte" class="java.lang.Integer" value="0"/>
+</TreatmentElement>
+<TreatmentElement name="harvest by target dbh" label="Zielstärkennutzung (strickt)" class="de.nwfva.silviculture.base.TeHarvestTargetDBHStrict">
+<TreatmentElementParameter name="maxVolume" label="maximales Volumen" class="java.lang.Double" value="150.0"/>
+<TreatmentElementParameter name="neuezst" label="Zielstärke" class="java.lang.String" value="110=85.0"/>
+</TreatmentElement>
+</TeHeightInterval>
+<TeHeightInterval name="Durchforstung" startHeight="14.0" endHeight="36.0">
+<TreatmentElement name="Release Crop Trees" label="Z-Bäume freistellen" class="de.nwfva.silviculture.base.TeThinCTByCompetition">
+<TreatmentElementParameter name="maxOut" label="Maximales Durchforstungsvolumen" class="java.lang.Double" value="50.0"/>
+<TreatmentElementParameter name="maxOverlap" label="Maximale Kronenüberlappung" class="java.lang.Double" value="0.2"/>
+<TreatmentElementParameter name="nCompetitorToThin" label="Bedränger" class="java.lang.Double" value="0.5"/>
+<TreatmentElementParameter name="useQuality" label="Qualität berücksichtigen" class="java.lang.Boolean" value="true"/>
+</TreatmentElement>
+<TreatmentElement name="Thinning from above 2" label="Hochdurchforstung special" class="de.nwfva.silviculture.base.TeThinFromAbove2">
+<TreatmentElementParameter name="maxOut" label="Maximales Durchforstungsvolumen" class="java.lang.Double" value="50.0"/>
+<TreatmentElementParameter name="thinningFactor" label="Durchforstungsstärke " class="java.lang.Double" value="1.0"/>
+<TreatmentElementParameter name="maxBgradAbsenkung" label="Maximale Bestockungsgradabsenkung" class="java.lang.Double" value="0.4"/>
+<TreatmentElementParameter name="basalArea" label="Grundfläche" class="java.lang.String" value="-32.0032-0.3916*sp.h100+30.45109*ln(sp.h100)-6.9689*ln(sp.h100)+3.828-0.0823*t.si-26.331+15.808"/>
+<TreatmentElementParameter name="useQuality" label="Qualität berücksichtigen" class="java.lang.Boolean" value="true"/>
+</TreatmentElement>
+<TreatmentElement name="nature protection" label="Naturschutz" class="de.nwfva.silviculture.base.TeProtection">
+<TreatmentElementParameter name="nhabitat" label="Habitatbäume" class="java.lang.Integer" value="0"/>
+<TreatmentElementParameter name="hardwoodOnly" label="Habitat tree" class="java.lang.String" value="2 nur Buche oder Eiche"/>
+<TreatmentElementParameter name="minorities" label="Seltene Arten" class="java.lang.Boolean" value="true"/>
+<TreatmentElementParameter name="minimumCoverage" label="Minimaler Schlussgrad" class="java.lang.Double" value="0.0"/>
+<TreatmentElementParameter name="protectDBH" label="Bäume mit großen BHD" class="java.lang.Double" value="999.9"/>
+</TreatmentElement>
+</TeHeightInterval>
+</TePhase>
+</TeChain>
